@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoCalc | Inteligência Ambiental</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-wrapper">
+        <header class="main-header">
+            <div class="logo"><span>●</span> Calculadora Ecológica <span>●</span> </div>
+            <p>Calculando a emissão de CO² para uma logística responsável e possibilitar um país melhor.</p>
+        </header>
+
+        <main class="card">
+            <h2>Configurações da Rota</h2>
+            
+            <div class="grid-row">
+                <div class="input-group">
+                    <label>📍 CIDADE DE ORIGEM</label>
+                    <select id="origin-city">
+                        <option value="" selected disabled>Selecione a cidade...</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>🏁 CIDADE DE DESTINO</label>
+                    <select id="destination-city">
+                        <option value="" selected disabled>Selecione a cidade...</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>🗺️ DISTÂNCIA (KM)</label>
+                <div class="distance-row">
+                    <input type="number" id="distance-input" placeholder="Calculada automaticamente" disabled>
+                    <label class="manual-check">
+                        <input type="checkbox" id="manual-toggle"> <span>INSERIR MANUAL</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>🚛 MEIO DE TRANSPORTE PRINCIPAL</label>
+                <select id="transport-mode">
+                    <option value="" selected disabled>Selecione o transporte...</option>
+                </select>
+            </div>
+
+            <button id="calculate-btn" class="btn-primary">CALCULAR IMPACTO AMBIENTAL</button>
+            
+            <div id="result-box" class="result-box hidden"></div>
+        </main>
+
+        <footer class="main-footer">
+            Wandré Cunha © 2026 - Desafio de Projeto DIO - GitHub Copilot - Código na Prática
+        </footer>
+    </div>
+
+    <!-- Scripts em ordem (Sem type="module" para evitar erro de CORS) -->
+    <script src="js/routes-data.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/calculator.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
